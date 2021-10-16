@@ -42,5 +42,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
 VOLUME ["/scripts"]
 WORKDIR /scripts
 
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+COPY ./custom.ini $PHP_INI_DIR/conf.d/
+
 ENTRYPOINT ["php"]
 CMD ["-m"]
