@@ -1,0 +1,20 @@
+name: Build
+
+
+on:
+
+  push:
+    branches: 
+      - master
+
+  schedule:
+    - cron: "0 0 * * 4"
+
+
+jobs:
+
+  build:
+    name: Build image
+
+  publish:
+    name: Publish image to Docker Hub
