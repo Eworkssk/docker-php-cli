@@ -39,6 +39,9 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
     zip \
     xz-utils
 
+RUN curl https://rclone.org/install.sh | bash
+RUN rclone config touch
+
 VOLUME ["/scripts"]
 WORKDIR /scripts
 
