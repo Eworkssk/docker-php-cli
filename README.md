@@ -106,6 +106,7 @@ curl
 ghostscript
 jq
 poppler-utils
+rclone
 ssh
 unzip
 zip
