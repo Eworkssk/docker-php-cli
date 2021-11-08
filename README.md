@@ -1,5 +1,10 @@
 # PHP CLI Docker Image
 
+![Docker Stars](https://img.shields.io/docker/stars/eworkssk/php-cli?style=for-the-badge)
+![Docker Pulls](https://img.shields.io/docker/pulls/eworkssk/php-cli?style=for-the-badge)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/eworkssk/php-cli/latest?style=for-the-badge)
+![Docker Image Version](https://img.shields.io/docker/v/eworkssk/php-cli?label=PHP%20Version&style=for-the-badge)
+
 ## Pull
 ```
 docker pull eworkssk/php-cli:latest
