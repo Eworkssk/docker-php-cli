@@ -37,7 +37,10 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
     ssh \
     unzip \
     zip \
-    xz-utils
+    xz-utils && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get autoremove -y && \
+    apt-get clean -y
 
 RUN curl https://rclone.org/install.sh | bash
 RUN rclone config touch && \
