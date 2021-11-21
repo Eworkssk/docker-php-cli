@@ -40,7 +40,9 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
     xz-utils
 
 RUN curl https://rclone.org/install.sh | bash
-RUN rclone config touch
+RUN rclone config touch && \
+    cp /root/.config/rclone/rclone.conf /var/www/.rclone.conf && \
+    chown www-data:www-data /var/www/.rclone.conf
 
 VOLUME ["/scripts"]
 WORKDIR /scripts
