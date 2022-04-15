@@ -5,13 +5,15 @@
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/eworkssk/php-cli/latest?style=for-the-badge)
 ![Docker Image Version](https://img.shields.io/docker/v/eworkssk/php-cli?label=PHP%20Version&style=for-the-badge)
 
+**Automatic weekly updates**
+
 ## Pull
 ```
 docker pull eworkssk/php-cli:latest
 ```
 or for use in production environment:
 ```
-docker pull eworkssk/php-cli:8.0
+docker pull eworkssk/php-cli:8.1
 ```
 
 ## Usage
@@ -27,6 +29,10 @@ docker run -v $(pwd):/scripts --rm eworkssk/php-cli script.php
 If you need, you can override the default entrypoint:
 ```
 docker run --entrypoint /path/to/executable --rm eworkssk/php-cli
+```
+Optionally, pass volume for `opcache`:
+```
+docker run -v my_dir:/tmp --rm eworkssk/php-cli
 ```
 
 ## List of installed PHP extensions

@@ -1,4 +1,4 @@
-FROM php:8.0-cli
+FROM php:8.1-cli
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN install-php-extensions bcmath
@@ -47,11 +47,13 @@ RUN rclone config touch && \
     cp /root/.config/rclone/rclone.conf /var/www/.rclone.conf && \
     chown www-data:www-data /var/www/.rclone.conf
 
-VOLUME ["/scripts"]
+VOLUME ["/scripts", "/tmp"]
 WORKDIR /scripts
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 COPY ./custom.ini $PHP_INI_DIR/conf.d/
+
+USER www-data
 
 ENTRYPOINT ["php"]
 CMD ["-m"]
