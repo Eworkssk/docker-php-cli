@@ -31,6 +31,7 @@ RUN install-php-extensions zip
 
 RUN apt-get update -y && apt-get install --no-install-recommends --no-install-suggests -y \
     curl \
+    git \
     ghostscript \
     jq \
     poppler-utils \
@@ -40,7 +41,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
     xz-utils && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
-    apt-get clean -y
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN curl https://rclone.org/install.sh | bash
 RUN rclone config touch && \
@@ -51,7 +53,7 @@ VOLUME ["/scripts", "/tmp"]
 WORKDIR /scripts
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-COPY ./custom.ini $PHP_INI_DIR/conf.d/
+COPY ./custom.ini $PHP_INI_DIR/conf.d/xy-custom.ini
 
 USER www-data
 

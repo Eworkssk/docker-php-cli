@@ -7,6 +7,8 @@
 
 **Automatic weekly updates**
 
+💡 Do you need PHP FPM instead? Check out our [eworkssk/php-fpm](https://github.com/Eworkssk/docker-php-fpm) image.
+
 ## Pull
 ```
 docker pull eworkssk/php-cli:latest
@@ -109,6 +111,7 @@ Zend OPcache
 ## List of installed additional software
 ```
 curl
+git
 ghostscript
 jq
 poppler-utils
