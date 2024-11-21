@@ -5,7 +5,7 @@ on:
 
   push:
     branches: 
-      - "master"
+      - "8.1"
       - "8.0"
 
   schedule:
@@ -17,16 +17,16 @@ on:
 jobs:
 
   build_and_publish_81:
-    name: Build and publish Docker image to Docker Hub
-    runs-on: ubuntu-20.04
+    name: Build and publish PHP 8.1 Docker image
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          ref: "master"
+          ref: "8.1"
 
-      - uses: mr-smithers-excellent/docker-build-push@v5
+      - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
         with:
           image: eworkssk/php-cli
@@ -36,16 +36,16 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
   build_and_publish_80:
-    name: Build and publish Docker image to Docker Hub
-    runs-on: ubuntu-20.04
+    name: Build and publish PHP 8.0 Docker image
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: "8.0"
 
-      - uses: mr-smithers-excellent/docker-build-push@v5
+      - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
         with:
           image: eworkssk/php-cli
