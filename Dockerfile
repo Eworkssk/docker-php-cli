@@ -1,4 +1,4 @@
-FROM php:8.3-cli
+FROM php:8.4-cli
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN install-php-extensions bcmath
@@ -15,7 +15,6 @@ RUN install-php-extensions http
 RUN install-php-extensions imagick
 RUN install-php-extensions imap
 RUN install-php-extensions intl
-RUN install-php-extensions mcrypt
 RUN install-php-extensions mysqli
 RUN install-php-extensions oci8
 RUN install-php-extensions opcache
