@@ -12,7 +12,7 @@ RUN install-php-extensions geospatial
 RUN install-php-extensions gettext
 RUN install-php-extensions gnupg
 RUN install-php-extensions http
-#RUN install-php-extensions imagick
+RUN install-php-extensions imagick
 RUN install-php-extensions imap
 RUN install-php-extensions intl
 RUN install-php-extensions mysqli

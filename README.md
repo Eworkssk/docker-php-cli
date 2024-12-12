@@ -66,7 +66,7 @@ gnupg
 hash
 http
 iconv
-#imagick
+imagick
 imap
 inotify
 intl
