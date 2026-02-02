@@ -1,4 +1,4 @@
-FROM php:8.4-cli
+FROM php:8.5-cli
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN install-php-extensions bcmath
@@ -38,7 +38,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends --no-install-su
     ssh \
     unzip \
     zip \
-    xz-utils && \
+    xz-utils \
+    libvips-tools && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
     apt-get clean -y && \
