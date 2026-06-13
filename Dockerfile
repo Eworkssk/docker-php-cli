@@ -50,7 +50,6 @@ RUN rclone config touch && \
     cp /root/.config/rclone/rclone.conf /var/www/.rclone.conf && \
     chown www-data:www-data /var/www/.rclone.conf
 
-VOLUME ["/scripts", "/tmp"]
 WORKDIR /scripts
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
