@@ -7,7 +7,7 @@
 
 **Automatic weekly updates**
 
-⚡ PHP 8.1, 8.2, 8.3, 8.4 and 8.5 now available for both `linux/amd64` and `linux/arm64/v8`
+⚡ PHP 8.2, 8.3, 8.4 and 8.5 now available for both `linux/amd64` and `linux/arm64/v8`
 
 💡 Do you need PHP FPM instead? Check out our [eworkssk/php-fpm](https://github.com/Eworkssk/docker-php-fpm) image.
 
