@@ -1,5 +1,6 @@
 FROM php:8.5-cli
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/install-php-extensions.orig
+COPY --chmod=755 ./install-php-extensions-retry.sh /usr/local/bin/install-php-extensions
 
 RUN install-php-extensions bcmath
 RUN install-php-extensions bz2
